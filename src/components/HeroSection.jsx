@@ -103,7 +103,7 @@ export default function HeroSection() {
             />
           </motion.a>
           <motion.a
-            href="#contato"
+            href="mailto:guilhermeakio28@gmail.com"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.97 }}
             className="px-7 py-3.5 rounded-full border border-white/15 text-ink-50 font-medium hover:border-accent-cyan/50 hover:text-accent-cyan transition-colors"
