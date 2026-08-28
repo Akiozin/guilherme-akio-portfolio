@@ -1,0 +1,80 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    font-family: 'Inter', sans-serif;
+    background-color: #080D17;
+  }
+
+  h1, h2, h3, h4 {
+    font-family: 'Poppins', sans-serif;
+  }
+
+  ::selection {
+    background-color: rgba(34, 211, 238, 0.28);
+    color: #F8FAFC;
+  }
+
+  /* Foco visível para acessibilidade de teclado */
+  :focus-visible {
+    outline: 2px solid #22D3EE;
+    outline-offset: 3px;
+    border-radius: 4px;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+    *, *::before, *::after {
+      animation-duration: 0.001ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.001ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+}
+
+@layer components {
+  /* Painel de vidro reutilizável — glassmorphism */
+  .glass-panel {
+    @apply bg-base-900/50 backdrop-blur-xl border border-white/[0.06];
+  }
+
+  /* Texto com gradiente de destaque (assinatura visual do site) */
+  .text-aurora {
+    background-image: linear-gradient(135deg, #22D3EE 0%, #A78BFA 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+  /* Badge de tecnologia com fonte monoespaçada */
+  .tech-badge {
+    @apply font-mono text-xs tracking-tight px-3 py-1.5 rounded-full border border-white/10 bg-white/[0.03] text-ink-50/90 transition-colors duration-300 hover:border-accent-cyan/50 hover:text-accent-cyan;
+  }
+
+  .section-eyebrow {
+    @apply font-mono text-xs uppercase tracking-[0.3em] text-accent-cyan/80;
+  }
+}
+
+@layer utilities {
+  .mask-fade-bottom {
+    mask-image: linear-gradient(to bottom, black 85%, transparent 100%);
+  }
+
+  .scrollbar-thin::-webkit-scrollbar {
+    width: 6px;
+  }
+  .scrollbar-thin::-webkit-scrollbar-thumb {
+    background: rgba(148, 163, 184, 0.3);
+    border-radius: 999px;
+  }
+}
